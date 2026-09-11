@@ -1,4 +1,4 @@
-import withLayoutBasic from "@/libs/components/layout/LayoutHome"
+import withLayoutBasic from "@/libs/components/layout/LayoutBasic"
 import { Box, Container, Stack } from "@mui/material"
 import { orange } from "@mui/material/colors"
 import { NextPage } from "next"

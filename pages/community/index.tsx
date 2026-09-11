@@ -1,4 +1,4 @@
-import withLayoutBasic from "@/libs/components/layout/LayoutHome";
+import withLayoutBasic from "@/libs/components/layout/LayoutBasic";
 import { NextPage } from "next";
 
 const Coommunity: NextPage = () => {
