@@ -1,16 +1,15 @@
-/*IMPORTS*/
-@import '../variables.scss';
-@import 'homepage/homepage.scss';
-
+/** IMPORTS **/
+@import "../variables.scss";
+@import "../pc/homepage/homepage.scss";
+@import "../pc/property/property.scss";
+@import "../pc/property/detail.scss";
 
 #pc-wrap {
   #top {
     .navbar {
       .navbar-main {
         position: fixed;
-        top: 0;
-        left: 0;
-        padding: 0 22px;
+        padding: 22px 0px;
         width: 100%;
         height: 87px;
         display: flex;
@@ -19,12 +18,11 @@
         z-index: 99;
         align-items: center;
         border-top: 1px solid rgba(255, 255, 255, 0.07);
-
         &.transparent {
-          background-color: #181a20;
+          background-color: #181a209e;
         }
-
         .container {
+          display: flex;
           flex-direction: row;
           align-items: center;
           justify-content: space-between;
@@ -35,13 +33,12 @@
               cursor: pointer;
             }
           }
-
           .router-box {
+            position: relative;
+            width: 617px;
             display: flex;
             flex-direction: row;
-            align-items: center;
-            gap: 80px;
-
+            justify-content: space-between;
             div {
               position: relative;
               color: #eeeeee;
@@ -53,12 +50,9 @@
               cursor: pointer;
             }
           }
-
           .user-box {
-            width: 270px;
             display: flex;
             flex-direction: row;
-            align-items: center;
             justify-content: flex-end;
 
             .join-box {
@@ -87,8 +81,6 @@
             }
 
             .login-user {
-              cursor: pointer;
-
               img {
                 width: 42px;
                 height: 42px;
@@ -105,10 +97,8 @@
     position: relative;
     width: 100%;
     height: 860px;
-    background-image: url('/img/banner/header1.svg');
+    background-image: url("/img/banner/header1.svg");
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 
     .container {
       position: relative;
@@ -119,14 +109,12 @@
       .search-box {
         position: relative;
         margin-top: 615px;
-        padding: 16px 20px;
+        padding: 16px 29px;
         width: 1094px;
         height: 96px;
         display: flex;
         flex-direction: row;
-        align-items: center;
         justify-content: space-between;
-        box-sizing: border-box;
         background: rgba(255, 255, 255, 0.28);
         border-radius: 12px;
 
@@ -134,32 +122,24 @@
           width: 712px;
           display: flex;
           flex-direction: row;
-          align-items: center;
           justify-content: space-between;
 
           .box {
-            padding: 0 22px;
+            padding: 24px 22px;
             width: 213px;
             height: 56px;
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            border: 1px solid transparent;
             border-radius: 12px;
-            color: #181a20;
             background: rgba(255, 255, 255, 0.575);
             box-sizing: border-box;
             cursor: pointer;
 
-            &.on,
-            &:hover {
+            &.on {
               background: #ffffff;
-              border: 1px solid #181a20;
-              color: #181a20;
-            }
-
-            svg {
+              border: 1px solid #000;
               color: #181a20;
             }
 
@@ -173,6 +153,7 @@
             }
           }
         }
+
         .search-box-other {
           display: flex;
           flex-direction: row;
@@ -200,6 +181,7 @@
               cursor: pointer;
             }
           }
+
           .search-btn {
             margin-left: 12px;
             width: 62px;
@@ -211,7 +193,6 @@
             background: #f17742;
             cursor: pointer;
 
-            img,
             svg {
               width: 20px;
               height: 20px;
@@ -219,6 +200,7 @@
             }
           }
         }
+
         .filter-location {
           position: absolute;
           padding: 40px 60px;
@@ -256,6 +238,7 @@
               border-radius: 15px;
               cursor: pointer;
             }
+
             span {
               margin-left: 22px;
               color: #181a20;
@@ -267,11 +250,13 @@
               cursor: pointer;
               text-transform: capitalize;
             }
+
             label {
               line-height: 13px;
             }
           }
         }
+
         .filter-type {
           position: absolute;
           padding: 50px;
@@ -315,11 +300,16 @@
               font-style: normal;
               font-weight: 700;
               line-height: 26px;
-              background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+              background: linear-gradient(
+                180deg,
+                #fff 0%,
+                rgba(255, 255, 255, 0) 100%
+              );
               text-transform: capitalize;
             }
           }
         }
+
         .filter-rooms {
           position: absolute;
           padding: 10px 92px;
@@ -338,41 +328,13 @@
           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
           box-sizing: border-box;
           z-index: 1;
+
           &.on {
             visibility: visible;
             transition: 0.2s ease-out;
             background: #fffdfd;
           }
 
-          div {
-            width: 295px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-
-            img {
-              width: 122px;
-              height: 85px;
-              border-radius: 15px;
-              cursor: pointer;
-            }
-
-            span {
-              margin-left: 22px;
-              color: #181a20;
-              font-family: $font;
-              font-size: 20px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: 26px;
-              cursor: pointer;
-              text-transform: capitalize;
-            }
-
-            label {
-              line-height: 13px;
-            }
-          }
           span {
             display: flex;
             align-items: center;
@@ -382,9 +344,10 @@
             font-family: $font;
             font-size: 20px;
             font-style: normal;
-            font-weight: 600;
+            font-weight: 400;
             line-height: 26px;
             cursor: pointer;
+
             &:hover {
               border-radius: 5px;
               border: 1px solid #b9b9b9;
@@ -395,6 +358,7 @@
       }
     }
   }
+
   .header-basic {
     position: relative;
     width: 100%;
@@ -432,6 +396,7 @@
       }
     }
   }
+
   #footer {
     position: relative;
     padding: 60px 0px 18px 0px;
@@ -475,6 +440,7 @@
               font-weight: 400;
               text-transform: capitalize;
             }
+
             p {
               color: #fff;
               font-family: $font;
